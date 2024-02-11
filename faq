@@ -1,0 +1,72 @@
+1) first fetch tags using unwind and match opeartion 
+2) iterate and find tag details and faq details as well
+
+
+		{claim_status:0, product_category:"Smart Watches"}, 
+		{$set:"product_category":"Smart Watch"}
+
+db.warranty_claim_and_support.updateMany(
+	):
+
+	db.warranty_claim_and_support.update({$and:[{"claim_status":0},{ "product_category":"Smart Watches"}]}, {$set:{"product_category":"Smart Watch"}});
+
+
+
+
+
+	db.warranty_claim_and_support.updateMany({$and:[{"claim_status":0},{ "product_category_id":6}]}, {$set:{"product_category_id":11}});
+
+
+
+	db.warranty_claim_and_support.updateMany(
+		{$and:[{"claim_status":1},{ "product_category":"Smart Watches"}]}, 
+		{$set:{"product_category":"Smart Watch"}}
+	);
+
+	db.warranty_claim_and_support.updateMany(
+		{
+		$and:[
+			{	"claim_status":{$in:[0,3,4]}
+			},
+			{ 	"product_category":"Smart Watches"}
+			]}, 
+			{$set:{"product_category":"Smart Watch"}
+		}
+	);
+
+
+
+	Z-408-6864405-9934764_738
+	19106710270686
+	227993433
+
+
+
+
+
+"SELECT * FROM (SELECT ce.entity_id,ea.attribute_id,ea.backend_type,ea.attribute_code,CASE ea.backend_type   WHEN 'varchar' THEN ce_varchar.value   WHEN 'int' THEN ce_int.value  WHEN 'text' THEN ce_text.value  WHEN 'decimal' THEN ce_decimal.value  WHEN 'datetime' THEN ce_datetime.value  ELSE ea.backend_type END AS value,ea.is_required AS required FROM catalog_product_entity AS ce LEFT JOIN eav_attribute AS ea   ON ce.attribute_set_id = ea.entity_type_id LEFT JOIN catalog_product_entity_varchar AS ce_varchar   ON ce.entity_id = ce_varchar.entity_id  AND ea.attribute_id = ce_varchar.attribute_id  AND ea.backend_type = 'varchar' LEFT JOIN catalog_product_entity_int AS ce_int  ON ce.entity_id = ce_int.entity_id  AND ea.attribute_id = ce_int.attribute_id  AND ea.backend_type = 'int' LEFT JOIN catalog_product_entity_text AS ce_text  ON ce.entity_id = ce_text.entity_id  AND ea.attribute_id = ce_text.attribute_id  AND ea.backend_type = 'text' LEFT JOIN catalog_product_entity_decimal AS ce_decimal  ON ce.entity_id = ce_decimal.entity_id  AND ea.attribute_id = ce_decimal.attribute_id  AND ea.backend_type = 'decimal' LEFT JOIN catalog_product_entity_datetime AS ce_datetime  ON ce.entity_id = ce_datetime.entity_id  AND ea.attribute_id = ce_datetime.attribute_id  AND ea.backend_type = 'datetime' WHERE ce.entity_id = :productId  ) AS tab";
+
+
+
+
+
+SELECT * FROM 
+	(SELECT ce.entity_id,ea.attribute_id,ea.backend_type,ea.attribute_code,
+	CASE ea.backend_type  
+	 WHEN "varchar" THEN ce_varchar.value  
+	 WHEN "int" THEN ce_int.value  
+	 WHEN "text" THEN ce_text.value 
+	 WHEN "decimal" THEN ce_decimal.value  
+	 WHEN "datetime" THEN ce_datetime.value
+	 ELSE ea.backend_type 
+	 END AS value,
+	 ea.is_required AS required 
+	 FROM catalog_product_entity AS ce 
+	 LEFT JOIN eav_attribute AS ea ON ce.attribute_set_id = ea.entity_type_id 
+	 LEFT JOIN catalog_product_entity_varchar AS ce_varchar ON ce.entity_id = ce_varchar.entity_id  AND ea.attribute_id = ce_varchar.attribute_id  AND ea.backend_type = "varchar" 
+	 LEFT JOIN catalog_product_entity_int AS ce_int  ON ce.entity_id = ce_int.entity_id  AND ea.attribute_id = ce_int.attribute_id  AND ea.backend_type = "int" 
+	 LEFT JOIN catalog_product_entity_text AS ce_text  ON ce.entity_id = ce_text.entity_id  AND ea.attribute_id = ce_text.attribute_id  AND ea.backend_type = "text" 
+	 LEFT JOIN catalog_product_entity_decimal AS ce_decimal  ON ce.entity_id = ce_decimal.entity_id  AND ea.attribute_id = ce_decimal.attribute_id  AND ea.backend_type = "decimal" 
+	 LEFT JOIN catalog_product_entity_datetime AS ce_datetime  ON ce.entity_id = ce_datetime.entity_id  AND ea.attribute_id = ce_datetime.attribute_id  AND ea.backend_type = "datetime" 
+	 WHERE ce.entity_id = 258 
+ ) AS tab;

@@ -1,0 +1,160 @@
+execution flow:
+--------------
+
+command execution flow:
+
+$ promt means normal user
+# prompt means root/super user
+
+sudo -i: to switch to root user we can use sudo -i then we can see # prompt on terminal
+
+Online unix terminal:  http://www.masswerk.at/jsuix
+
+commanly used commands:
+------------------------
+
+1)pwd - print working directory
+2)ls - list out all files under directory
+3) mkdir - to create/make a directory
+4) cd - chnage the directory
+5 touch - to create a empty file
+6  rmdir - to remove the directory
+7 rm - to remove the file
+8 cal = to display calender
+9 date = to display current date and time
+10 help to display list of available commands
+11 clear
+12 exit to logout 
+13 hello = to display brief system info
+
+
+FILES SYSTEM:
+
+root is topmost file under this
+bin 
+devices
+home --> 
+etc
+
+
+LINUX FILE SYSTEM:
+-------------------
+types of files in linuc/unix:  
+------------------------------
+in linux files extesnion is not important. Based on content files type automcatically  detected
+in python everything is treated as object 
+in linux evrything is trested as a file
+ 1 Normal / Ordinary file --> 
+ ------------------------------
+ these files conatin data. these can be normal text files or binary files(images, videos, audio files)
+ 2 Directory Files  --->
+ ----------------------------
+
+ 3 Device Files --> 
+ -------------------
+ in linux evry device is treated as file. by using this files we can communicate with that file 
+inside /dev directory all device files will be there
+
+terminal ==> file tty --> command will give termial /dev/pts/0
+
+echo "I love" > /dev/pts/0   one terminal communicate with other terminal  > --> is called redirect
+ 
+
+ ls -l ==> command used to know the type of file
+ - normal file,
+ d directory file
+ l linked file
+c==> character special file
+b===> block special file
+s===> socket file 	
+ 
+ LINUX file system hierarchy:
+ ----------------------------
+ linux files system has tree like structure and it starts with root(/)
+ / is the top most tdirectory
+ sub directories are : bin etc home lib dev usr cdrom
+
+
+ 1)bin and 2)sbin
+
+ 3)etc: constains all the system configuration files. these  configuration files will be used by operating system itself
+
+ etc/passwd ===> all users information
+ /etc/group ==> all groups info
+ /etc/hosts ==> All hosts information is available( ip address nd dns names)
+ 4) tmp Directory:
+ -----------------
+ LINUX installation:
+ --------------------
+ 1) Oracle virtual installation 2) Ubantu installation
+
+
+ man command: ex=> man ls  to know about command
+ IF  A FILE END SWITH * IT IS EXECUTABLE FILE
+ @ SYMONL MEANS LINK FILE
+
+ ls =>list
+ ls -r => in reverse alphabetical order
+ ls -l => long listing form in alphabetical order
+ ls -t =>created/ last modified time
+ ls -lt =>created/lst mofified with time
+ ls -ltr => most recent will be bottom and old will be top
+ ls -a   => -a means all
+ ls | wc -l
+ ls -a|wc -l
+ ls -A => means alsomt all except . and .. files will be displayed
+ ls -F => to display all files using type
+ ls -F/bin 
+ ls -f  => to disable colours and will disply list of all files and directors
+ ls -i  => to display all files include inode number inode => means index node
+ ls -R  => recursive    inside direcory what files are also there
+ ls -s  =>  -s means size  for ex: 1block = 1kb
+ ls -h  =>  human readable form for memory statics
+ NOTE: 
+ ls -l /etc | head  top 10 will give
+ ls -l /etc | head -20
+ ls -l /etc |tail -20
+ ls -l /etc  | more/less next and previous pages 
+
+
+ cat /etc/passwd
+
+ GROUPSS:Groups are collections of zero or more users. A user belongs to a default group, and can also be a member of any of the other groups on a server.
+ /etc/group 
+ /etc/passwd 
+
+
+ FILE PERMISSIONS:
+ Mode and permissions breakdown
+
+
+   drwxrwxrwx    r - read, w- write, x - execute
+   d for file type
+1) rwx USER
+2) rwx GROUP
+3) rwx OTHer
+Permissions Classes
+From the diagram, you can see that the mode column indicates the file type, followed by three triads, or classes, of permissions: user (owner), group, and other. The order of the classes is consistent across all Linux systems.
+The three permissions classes work as follows:
+
+User: The owner of a file belongs to this class.
+Group: The members of the file’s group belong to this class. Group permissions are a useful way of assigning permissions on a given file to multiple users.
+Other: Any users that are not part of the user or group classes for this file belong to this class.
+
+ 
+Filters
+Filters are are a class of programs that are commonly used with output piped from another program. Many of them are also useful on their own, but they illustrate piping behavior especially well.
+
+find - returns files with filenames that match the argument passed to find.
+
+grep - returns text that matches the string pattern passed to grep.
+
+tee - redirects standard input to both standard output and one or more files.
+
+tr - finds-and-replaces one string with another.
+
+wc - counts characters, lines, and words.
+
+ 3042579408
+
+ sarasij.roy@pristyncare.com, satish.suthar@pristyncare.com, shubhankar.dubey@pristyncare.com, pranav.mishra1@pristyncare.com
